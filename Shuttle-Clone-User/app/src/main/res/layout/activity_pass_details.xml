@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_height"
+        android:background="@drawable/bg_toolbar" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_toolbar"
+        android:theme="@style/Toolbar"
+        app:contentInsetStart="0dp"
+        app:titleTextColor="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/txt_todo"
+                android:padding="@dimen/spacing_medium"
+                android:src="@drawable/ic_left_arrow_white" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:layout_toStartOf="@id/ivHome"
+                android:layout_toEndOf="@+id/ivBack"
+                android:fontFamily="@font/googlesansextrabold"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_mlarge"
+                android:text="@string/text_pass_details" />
+
+
+            <ImageView
+                android:id="@+id/ivHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:contentDescription="@string/txt_todo"
+                android:padding="@dimen/spacing_medium"
+                android:focusable="true"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_baseline_home_24" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/btnpay"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:background="@drawable/bg_card"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/spacing_small"
+                app:cardElevation="@dimen/card_shadow">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimaryDark">
+
+                        <LinearLayout
+                            android:id="@+id/ll1"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/img_height"
+                            android:layout_toRightOf="@+id/ll2"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvNoOfRides"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/googlesansbold"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_large"
+                                android:text="NO.Rides" />
+
+                            <TextView
+                                 android:id="@+id/tvNoOfDays"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/googlesansbold"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_medium"
+                                android:visibility="visible"
+                                android:text="30 Days validity" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll2"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/img_height"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvFarePerRide"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/googlesansbold"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_large"
+                                android:text="₹104/ride" />
+
+                            <TextView
+                                android:id="@+id/tvActualFarePerRide"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/googlesansbold"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_medium"
+                                android:visibility="visible"
+                                android:text="₹150" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:gravity="center|left"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/googlesansbold"
+                            android:padding="@dimen/_5sdp"
+                            android:textColor="@color/textheader"
+                            android:textSize="@dimen/font_medium"
+                            android:text="Office Route" />
+
+
+                        <TextView
+                            android:id="@+id/tvOfficePickUp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_dot"
+                            android:drawablePadding="5dp"
+                            android:drawableTint="@color/green"
+                            android:ellipsize="end"
+                            android:hint="PickUp Point"
+                            android:singleLine="true"
+                            android:textColor="@color/textheader"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:id="@+id/tvOfficeDrop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_dot"
+                            android:drawablePadding="5dp"
+                            android:drawableTint="@color/red"
+                            android:ellipsize="end"
+                            android:hint="Drop Point"
+                            android:singleLine="true"
+                            android:textColor="@color/textheader"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/spacing_small"
+                app:cardElevation="@dimen/card_shadow">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/bg_square"
+                    android:padding="@dimen/_5sdp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesansbold"
+                        android:textColor="@color/textheader"
+                        android:textSize="@dimen/font_medium"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:drawableTint="@color/black"
+                        android:drawableLeft="@drawable/ic_baseline_info_24"
+                        android:text="Note" />
+                    <TextView
+                        android:id="@+id/tvPassDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesansbold"
+                        android:textColor="@color/textcolor"
+                        android:padding="@dimen/_5sdp"
+                        android:textSize="@dimen/font_medium"
+                        android:text="@string/text_get_100_when_your_friend_complete_trip_with_us" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_medium"
+                android:layout_marginRight="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_marginBottom="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/spacing_small"
+                app:cardElevation="@dimen/card_shadow"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/tvHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_square"
+                    android:drawableStart="@drawable/ic_question_line"
+                    android:drawableEnd="@drawable/ic_keyboard_arrow_grey"
+                    android:drawablePadding="@dimen/spacing_medium"
+                    android:fontFamily="@font/googlesansbold"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:gravity="start"
+                    android:elevation="5dp"
+                    android:paddingStart="@dimen/spacing_medium"
+                    android:paddingTop="@dimen/spacing_large"
+                    android:paddingEnd="@dimen/spacing_medium"
+                    android:paddingBottom="@dimen/spacing_large"
+                    android:text="Terms &amp; Conditions"
+                    android:textColor="@color/textheader"
+                    android:textSize="@dimen/font_large" />
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnpay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/spacing_medium"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        android:background="@drawable/bg_btn_shape"
+        android:fontFamily="@font/googlesansbold"
+        android:text="Continue to Pay"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_large" />
+
+</RelativeLayout>

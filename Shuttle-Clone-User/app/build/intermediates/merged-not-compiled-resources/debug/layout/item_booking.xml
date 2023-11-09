@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvBusRoutesItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:layout_marginBottom="@dimen/spacing_xsmall"
+        app:cardCornerRadius="@dimen/spacing_small"
+        app:cardElevation="@dimen/card_shadow">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rlContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium">
+
+                <TextView
+                    android:id="@+id/tvDestination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:layout_marginEnd="@dimen/spacing_medium"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/googlesansbold"
+                    android:maxLines="2"
+                    android:textColor="@color/textheader"
+                    android:textSize="@dimen/font_large"
+                    tools:text="@string/text_destination" />
+
+                <TextView
+                    android:id="@+id/tvDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvDestination"
+                    android:fontFamily="@font/googlesansregular"
+                    android:paddingTop="@dimen/spacing_small"
+                    android:paddingBottom="@dimen/spacing_small"
+                    android:textColor="@color/textchild"
+                    tools:text="@string/txt_date" />
+
+                <TextView
+                    android:id="@+id/tvConfirmed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvDestination"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/googlesansregular"
+                    android:gravity="center_vertical"
+                    android:text="@string/text_confirmed"
+                    android:textColor="@color/color_check" />
+
+                <TextView
+                    android:id="@+id/tvTrackBooking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvConfirmed"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_border"
+                    android:clickable="true"
+                    android:fontFamily="@font/googlesansregular"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:text="@string/txt_track_booking"
+                    android:textColor="@color/red" />
+
+                <TextView
+                    android:id="@+id/tvCancelBooking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTrackBooking"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/bg_border"
+                    android:clickable="true"
+                    android:fontFamily="@font/googlesansregular"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:text="@string/txt_cancel_booking"
+                    android:textColor="@color/red" />
+
+                <LinearLayout
+                    android:id="@+id/layBusDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvDuration"
+                    android:layout_marginTop="-5dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/googlesansregular"
+                            android:paddingEnd="@dimen/spacing_medium"
+                            android:text="@string/text_bus_no"
+                            android:textColor="@color/textheader"
+                            android:textSize="@dimen/font_medium" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"
+                            android:fontFamily="@font/googlesansregular"
+                            android:text="@string/txtColon"
+                            android:textColor="@color/textheader"
+                            android:textSize="@dimen/font_medium" />
+
+                        <TextView
+                            android:id="@+id/tvBusNo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.5"
+                            android:fontFamily="@font/googlesansbold"
+                            android:paddingStart="@dimen/spacing_small"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:textColor="@color/endcolor"
+                            android:textSize="@dimen/font_medium" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/googlesansregular"
+                            android:paddingEnd="@dimen/spacing_medium"
+                            android:text="@string/txt_bus_name"
+                            android:textColor="@color/textheader"
+                            android:textSize="@dimen/font_medium" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"
+                            android:fontFamily="@font/googlesansregular"
+                            android:text="@string/txtColon"
+                            android:textColor="@color/textheader"
+                            android:textSize="@dimen/font_medium" />
+
+                        <TextView
+                            android:id="@+id/tvBusName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.5"
+                            android:fontFamily="@font/googlesansbold"
+                            android:paddingStart="@dimen/spacing_small"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:textColor="@color/endcolor"
+                            android:textSize="@dimen/font_medium" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/ivShowMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layBusDetails"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="0dp"
+                    android:contentDescription="@string/txt_todo"
+                    android:padding="@dimen/spacing_xsmall"
+                    android:src="@drawable/ic_keyboard_arrow_down_black" />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/rlShowMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlContent"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/llTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:background="@color/app_background">
+
+                    <TextView
+                        android:id="@+id/tvStartTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/googlesansbold"
+                        android:layout_marginStart="@dimen/spacing_medium"
+                        android:layout_marginEnd="@dimen/spacing_medium"
+                        android:textColor="@color/textchild"
+                        android:textSize="@dimen/font_mlarge"
+                        tools:text="@string/lbl_booking_starttime1" />
+
+                    <View
+                        android:id="@+id/vDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/llMIddle"
+                        android:layout_toEndOf="@+id/tvStartTime"
+                        android:background="@color/view_color" />
+
+                    <LinearLayout
+                        android:id="@+id/llMIddle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_small">
+
+                        <ImageView
+                            android:layout_width="@dimen/spacing_xlarge"
+                            android:layout_height="@dimen/spacing_xlarge"
+                            android:layout_marginStart="@dimen/spacing_medium"
+                            android:layout_marginEnd="@dimen/spacing_medium"
+                            android:contentDescription="@string/txt_todo"
+                            android:padding="@dimen/spacing_medium"
+                            android:src="@drawable/ic_bus"
+                            android:tint="@color/endcolor" />
+
+                        <TextView
+                            android:id="@+id/tvTotalTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/googlesansbold"
+                            android:gravity="bottom"
+                            android:textColor="@color/textchild"
+                            android:textSize="@dimen/font_medium"
+                            tools:text="@string/txt_totalhour" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/tvEndTime"
+                        android:layout_toEndOf="@+id/llMIddle"
+                        android:background="@color/view_color" />
+
+                    <TextView
+                        android:id="@+id/tvEndTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/googlesansbold"
+                        android:gravity="end"
+                        android:layout_marginStart="@dimen/spacing_medium"
+                        android:layout_marginEnd="@dimen/spacing_medium"
+                        android:textColor="@color/textchild"
+                        android:textSize="@dimen/font_mlarge"
+                        tools:text="@string/txt_time" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/llDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llTime">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/googlesansregular"
+                                android:paddingStart="@dimen/spacing_medium"
+                                android:paddingEnd="@dimen/spacing_medium"
+                                android:text="@string/text_seat_no"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_medium" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.1"
+                                android:fontFamily="@font/googlesansregular"
+                                android:text="@string/txtColon"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_medium" />
+
+                            <TextView
+                                android:id="@+id/tvSeatNo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:fontFamily="@font/googlesansregular"
+                                android:paddingStart="@dimen/spacing_small"
+                                android:paddingEnd="@dimen/spacing_small"
+                                android:textColor="@color/endcolor"
+                                android:textSize="@dimen/font_medium"
+                                tools:text="@string/lbl_booking_SeatNo1" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/googlesansregular"
+                                android:paddingStart="@dimen/spacing_medium"
+                                android:paddingEnd="@dimen/spacing_medium"
+                                android:text="@string/txt_passenger_no"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_medium" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.1"
+                                android:fontFamily="@font/googlesansregular"
+                                android:text="@string/txtColon"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_medium" />
+
+                            <TextView
+                                android:id="@+id/tvPassengersNo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:fontFamily="@font/googlesansregular"
+                                android:paddingStart="@dimen/spacing_small"
+                                android:paddingEnd="@dimen/spacing_small"
+                                android:textColor="@color/endcolor"
+                                android:textSize="@dimen/font_medium"
+                                tools:text="@string/lbl_booking_ticketno1" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/googlesansregular"
+                                android:paddingStart="@dimen/spacing_medium"
+                                android:paddingEnd="@dimen/spacing_medium"
+                                android:text="@string/lbl_pnr_no"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_medium" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.1"
+                                android:fontFamily="@font/googlesansregular"
+                                android:text="@string/txtColon"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_medium" />
+
+                            <TextView
+                                android:id="@+id/tvPNRNo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:fontFamily="@font/googlesansregular"
+                                android:paddingStart="@dimen/spacing_small"
+                                android:paddingEnd="@dimen/spacing_small"
+                                android:textColor="@color/endcolor"
+                                android:textSize="@dimen/font_medium"
+                                tools:text="@string/lbl_booking_pnr1" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/googlesansregular"
+                                android:paddingStart="@dimen/spacing_medium"
+                                android:paddingEnd="@dimen/spacing_medium"
+                                android:text="@string/lbl_total_fare"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_large" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.1"
+                                android:fontFamily="@font/googlesansbold"
+                                android:text="@string/txtColon"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_large" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvTotalFareBeforeDiscount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/spacing_small"
+                                    android:layout_marginRight="@dimen/_10sdp"
+                                    android:fontFamily="@font/googlesansregular"
+                                    android:textColor="@color/textchild"
+                                    android:textSize="@dimen/font_medium"
+                                    android:visibility="gone"
+                                    tools:text="@string/text_500" />
+
+                                <TextView
+                                    android:id="@+id/tvTotalFare"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/spacing_small"
+                                    android:fontFamily="@font/googlesansbold"
+                                    android:textColor="@color/endcolor"
+                                    android:textSize="@dimen/font_large"
+                                    tools:text="@string/text_500" />
+
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_set_reminder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:drawableStart="@drawable/ic_time_24"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:fontFamily="@font/googlesansbold"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/spacing_small"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:text="@string/lbl_set_reminder"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/font_large"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/ivQr"
+                        android:layout_width="@dimen/small_label_width"
+                        android:layout_height="@dimen/small_label_width"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/spacing_medium"
+                        android:src="@drawable/qr_code" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/layInvoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_below="@+id/llDescription">
+                    <TextView
+                        android:id="@+id/tvDownloadInvoice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_border"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:paddingBottom="@dimen/_2sdp"
+                        android:fontFamily="@font/googlesansregular"
+                        android:gravity="center_vertical"
+                        android:text="@string/download_invoice"
+                        android:visibility="gone"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <TextView
+                        android:id="@+id/tvInvoiceAlert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesansregular"
+                        android:gravity="center_vertical"
+                        android:layout_below="@+id/llDescription"
+                        android:text="@string/invoice_alert"
+                        android:textSize="@dimen/font_medium"
+                        />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivShowLess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layInvoice"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/txt_todo"
+                    android:padding="@dimen/spacing_small"
+                    android:src="@drawable/ic_keyboard_arrow_up_black" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/layCallDriver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cvBusRoutesItem"
+        android:background="@drawable/bg_square"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:gravity="center"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tvDriverName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ram"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_margin="@dimen/_8sdp"
+            android:textSize="@dimen/font_normal"
+            android:textColor="@color/white"
+            android:gravity="center|left"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabCustomSize="@dimen/_35sdp"
+            app:maxImageSize="@dimen/_20sdp"
+            android:src="@drawable/ic_phone_24"
+            app:backgroundTint="@color/white"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

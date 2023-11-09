@@ -1,0 +1,221 @@
+/*------------------------------------------------------------------
+ [Master Stylesheet]
+
+  Project:	Star Admin Bootstrap Template [Pro Version]
+  Version:	1.0
+-------------------------------------------------------------------*/
+
+
+
+
+/*-------------------------------------------------------------------*/
+/* === Import Bootstrap functions and variables === */
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+
+/*-------------------------------------------------------------------*/
+/* === Import template variables === */
+@import "variables";
+@import "../demo_1/variables";
+
+/*-------------------------------------------------------------------*/
+/* === SCSS Compass Functions === */
+@import "../../../../node_modules/compass-mixins/lib/compass";
+@import "../../../../node_modules/compass-mixins/lib/animate";
+
+/*-------------------------------------------------------------------*/
+/* === Boostrap Main SCSS === */
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
+//@import "../../../../node_modules/bootstrap-vue/dist/bootstrap-vue.css";
+
+
+
+
+/*-------------------------------------------------------------------*/
+/* === Template mixins === */
+@import "mixins/animation";
+@import "mixins/accordions";
+@import "mixins/background";
+@import "mixins/badges";
+@import "mixins/blockqoute";
+@import "mixins/breadcrumbs";
+@import "mixins/buttons";
+@import "mixins/cards";
+@import "mixins/misc";
+@import "mixins/no-ui-slider";
+@import "mixins/pagination";
+@import "mixins/text";
+@import "mixins/popovers";
+@import "mixins/tabs";
+@import "mixins/tooltips";
+
+/*-------------------------------------------------------------------*/
+/* === Core Styles === */
+@import "reset";
+@import "fonts";
+@import "functions";
+@import "typography";
+@import "utilities";
+@import "demo";
+@import "dashboard";
+@import "widgets";
+
+/*-------------------------------------------------------------------*/
+/* === Components === */
+@import "components/accordions";
+@import "components/badges";
+@import "components/bootstrap-progress";
+@import "components/breadcrumbs";
+@import "components/buttons";
+@import "components/cards";
+@import "components/carousel";
+@import "components/checkbox-radio";
+@import "components/dropdown";
+@import "components/forms";
+@import "components/icons";
+@import "components/pagination";
+@import "components/preview";
+@import "components/tables";
+@import "components/tabs";
+@import "components/todo-list";
+@import "components/lists";
+@import "components/loaders/loaders";
+@import "components/new-account";
+@import "components/timeline/timeline-horizontal";
+@import "components/timeline/timeline-vertical";
+@import "components/portfolio";
+@import "components/pricing-table";
+@import "components/timeline";
+@import "components/product-tile";
+@import "components/chat";
+@import "../demo_1/card";
+@import "../demo_1/dashboard";
+@import "../demo_1/footer";
+@import "../demo_1/nav";
+@import "../demo_1/navbar";
+@import "../demo_1/sidebar";
+@import "../demo_1/misc";
+@import "../demo_1/layouts";
+@import "components/plugin-overrides/full-calendar";
+@import "components/plugin-overrides/date-picker";
+@import "components/plugin-overrides/snotify";
+@import "components/plugin-overrides/chartjs";
+
+/*-------------------------------------------------------------------*/
+/* === Landing screens === */
+@import "screens/auth";
+@import "screens/error";
+@import "screens/profile-page";
+@import "screens/invoice";
+
+@import "components/mail-components/mail-list-container";
+@import "components/mail-components/mail-sidebar";
+@import "components/mail-components/messagecontent";
+
+@import "animation";
+
+
+
+
+.level {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.level-left {
+  -webkit-box-align: center;
+  -webkit-box-pack: start;
+  align-items: center;
+  justify-content: flex-start;
+}
+.level-right {
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  justify-content: flex-end;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+}
+.level-left .level-right {
+  flex-basis: auto;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.level-item {
+  align-items: center;
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+  -webkit-box-align: center;
+}
+.level .level-item .title {
+  margin-bottom: 0;
+}
+.level .level-item .title .is-5 {
+  font-size: 1.25rem !important;
+}
+.breadcrumb .is-small {
+  font-size: 0.75rem;
+}
+.is_bold {
+  font-weight: 700;
+}
+.breadcrumb ul {
+  list-style: none;
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  -webkit-box-pack: start;
+}
+.breadcrumb li {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+}
+.breadcrumb li:first-child a {
+  padding-left: 0;
+}
+.breadcrumb li.is-active a {
+  color: #363636;
+  cursor: default;
+  pointer-events: none;
+}
+.breadcrumb a {
+  align-items: center;
+  justify-content: center;
+  padding: 2px 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn.social-btn{
+  padding: 6px !important;
+}
+
+.vue-daterange-picker .form-control {
+  height: 30px;
+}
+
+.vbt-global-search .form-group .form-control {
+  height: 30px;
+}
+
+.modal-backdrop{
+   position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px) !important;
+}
+.invalid-feedback{
+  font-size:0.775rem !important;
+}

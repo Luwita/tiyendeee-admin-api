@@ -1,0 +1,4 @@
+#Thu Nov 02 09:53:27 PDT 2023
+base.0=C\:\\Users\\Luwi\\Desktop\\Tiyendee\\Shuttle-Clone-User\\app\\build\\intermediates\\dex\\debug\\minifyDebugWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,122 @@
+import axios from "axios";
+
+const API_URL = "http://localhost:3030/v1/auth/";
+
+export const userService = {
+  getAll,
+  login,
+  logout,
+  register,
+  refreshTokens,
+  checkAccessTokenExpiry,
+  sendPasswordRest,
+  resetPassword,
+};
+
+async function getAll(Objparams) {
+  try {
+    const response = await await axios.get(API_URL + "users", {
+      params: Objparams,
+    });
+    return response.data;
+  } catch (e) {
+    if (e.response.status === 401) {
+      return e.response.data;
+    }
+  }
+}
+
+async function login(email, password) {
+  try {
+    let response = await axios.post(API_URL + "login", { email, password });
+    let token = response.data.token.accessToken;
+    let refreshToken = response.data.token.refreshToken;
+    let expiresIn = response.data.token.expiresIn;
+    let tokenType = response.data.token.tokenType;
+    let user = response.data.admin;
+    localStorage.setItem("token", token);
+    localStorage.setItem("refreshToken", refreshToken);
+    localStorage.setItem("expiresIn", expiresIn);
+    localStorage.setItem("tokenType", tokenType);
+    localStorage.setItem("user", JSON.stringify(user));
+    return response.data;
+  } catch (e) {
+    return "error while :" + e;
+  }
+}
+
+function logout() {
+  localStorage.removeItem("token");
+  localStorage.removeItem("refreshToken");
+  localStorage.removeItem("expiresIn");
+  localStorage.removeItem("tokenType");
+  localStorage.removeItem("user");
+}
+
+async function register(user) {
+  try {
+    const register = await axios.post(API_URL + "register", user);
+    return register;
+  } catch (e) {
+    return "error while :" + e;
+  }
+}
+
+async function refreshTokens() {
+  try {
+    let refreshToken = localStorage.getItem("refreshToken");
+    let email = JSON.parse(localStorage.getItem("user")).email;
+
+    console.log("email", email, "refreshToken", refreshToken);
+    const res = await axios.post(API_URL + "refresh-token", {
+      email,
+      refreshToken,
+    });
+    let token = res.data.token.accessToken;
+    let newrefreshToken = res.data.token.refreshToken;
+    let expiresIn = res.data.token.expiresIn;
+    let tokenType = res.data.token.tokenType;
+    let user = res.data.admin;
+    localStorage.setItem("token", token);
+    localStorage.setItem("refreshToken", newrefreshToken);
+    localStorage.setItem("expiresIn", expiresIn);
+    localStorage.setItem("tokenType", tokenType);
+    localStorage.setItem("user", JSON.stringify(user));
+    return res.data;
+  } catch (e) {
+    if (e.response.status === 401) {
+      return e.response.data;
+    }
+  }
+}
+
+function checkAccessTokenExpiry() {}
+
+async function sendPasswordRest(email) {
+  try {
+    const response = await axios.post(API_URL + "send-password-reset", {
+      email,
+    });
+
+    return response.data;
+  } catch (e) {
+    if (e.response.status === 401) {
+      return e.response.data;
+    }
+  }
+}
+
+async function resetPassword(email, password, resetToken) {
+  try {
+    const response = await axios.post(API_URL + "reset-password", {
+      email,
+      password,
+      resetToken,
+    });
+    return response.data;
+  } catch (e) {
+    if (e.response.status === 401) {
+      return e.response.data;
+    }
+  }
+}

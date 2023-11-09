@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"busshuttledb.wallets"},{"v":{"$numberInt":"2"},"unique":true,"key":{"refercode":{"$numberInt":"1"}},"name":"refercode_1","background":true,"ns":"busshuttledb.wallets"}],"uuid":"8668d72c47a2443cbe157cb2cfd2b63e"}

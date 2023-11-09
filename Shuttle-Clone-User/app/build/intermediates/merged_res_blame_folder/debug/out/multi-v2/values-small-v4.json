@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.ferri.userapp-mergeDebugResources-63:/values-small-v4/values-small-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Luwi\\.gradle\\caches\\transforms-3\\ff0a86cb9e0c4c0580582640c14d8aff\\transformed\\material-1.8.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,128,198,270",
+                        "endColumns": "72,69,71,69",
+                        "endOffsets": "123,193,265,335"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"busshuttledb.admin_details"}],"uuid":"4cb14e01c97640faa66ac11b93a1e041"}

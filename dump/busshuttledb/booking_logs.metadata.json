@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"busshuttledb.booking_logs"},{"v":{"$numberInt":"2"},"key":{"payment_mode":{"$numberInt":"1"}},"name":"payment_mode_1","background":true,"ns":"busshuttledb.booking_logs"}],"uuid":"22084459896d4e2c927efeec1a8c100f"}

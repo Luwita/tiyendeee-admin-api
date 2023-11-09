@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"busshuttledb.reminders"},{"v":{"$numberInt":"2"},"key":{"every":{"$numberInt":"1"}},"name":"every_1","background":true,"ns":"busshuttledb.reminders"}],"uuid":"0285f329d02a4a0aa33f6d58df033f1a"}

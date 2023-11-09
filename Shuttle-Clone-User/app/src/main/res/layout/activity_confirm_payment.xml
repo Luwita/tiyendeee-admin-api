@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_height"
+        android:background="@drawable/bg_toolbar" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_toolbar"
+        android:theme="@style/Toolbar"
+        app:contentInsetStart="0dp"
+        app:titleTextColor="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/txt_todo"
+                android:padding="@dimen/spacing_medium"
+                android:src="@drawable/ic_left_arrow_white" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/spacing_medium"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:layout_toStartOf="@id/ivHome"
+                android:layout_toEndOf="@+id/ivBack"
+                android:fontFamily="@font/googlesansextrabold"
+                android:singleLine="true"
+                android:text="@string/text_confirm_payment"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_mlarge" />
+
+
+            <ImageView
+                android:id="@+id/ivHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/spacing_medium"
+                android:clickable="true"
+                android:contentDescription="@string/txt_todo"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/spacing_medium"
+                android:src="@drawable/ic_baseline_home_24"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnConfirmPay"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/bg_card"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_medium"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/spacing_small"
+                app:cardElevation="@dimen/card_shadow">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesansbold"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/invoice_txt"
+                        android:textColor="@color/textchild"
+                        android:textSize="@dimen/font_medium" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/googlesansbold"
+                            android:singleLine="true"
+                            android:text="dsjkbjbfd@gmail.com"
+                            android:textColor="@color/textheader"
+                            android:textSize="14sp" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="Change Email"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/spacing_small"
+                app:cardElevation="@dimen/card_shadow">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/tvBookingDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_btn_shape"
+                        android:drawableLeft="@drawable/ic_time_24"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:drawableTint="@color/white"
+                        android:fontFamily="@font/googlesansbold"
+                        android:gravity="center|left"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Booking Date"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_normal" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@color/white"
+                        android:gravity="center|left"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/googlesansbold"
+                            android:padding="@dimen/_5sdp"
+                            android:text="For both morning &amp; evening trips"
+                            android:textColor="@color/textheader"
+                            android:textSize="@dimen/font_medium"
+                            android:visibility="gone" />
+
+
+                        <TextView
+                            android:id="@+id/tvSlocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_dot"
+                            android:drawablePadding="5dp"
+                            android:drawableTint="@color/green"
+                            android:ellipsize="end"
+                            android:hint="PickUp Point"
+                            android:singleLine="true"
+                            android:textColor="@color/textheader"
+                            android:textSize="@dimen/font_large" />
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="10dp"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:background="@color/black" />
+
+                        <TextView
+                            android:id="@+id/tvDlocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:drawableLeft="@drawable/ic_dot"
+                            android:drawablePadding="5dp"
+                            android:drawableTint="@color/red"
+                            android:ellipsize="end"
+                            android:hint="Drop Point"
+                            android:singleLine="true"
+                            android:textColor="@color/textheader"
+                            android:textSize="@dimen/font_large" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_5sdp">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@color/black" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:id="@+id/tvStartTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:hint="07:30 am"
+                                android:singleLine="true"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_medium" />
+
+                            <View
+                                android:layout_width="5dp"
+                                android:layout_height="1dp"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:background="@color/black" />
+
+                            <TextView
+                                android:id="@+id/tvEndTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:hint="09:30 am"
+                                android:singleLine="true"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_medium" />
+
+                            <TextView
+                                android:id="@+id/tvBusDtl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/ic_bus"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:drawableTint="@color/colorAccent"
+                                android:gravity="center|right"
+                                android:singleLine="true"
+                                android:text="Bus"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_medium" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@color/black" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:singleLine="true"
+                                android:text="Seat Number"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_medium" />
+
+                            <TextView
+                                android:id="@+id/tvSeatNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/ic_seater"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:drawableTint="@color/colorAccent"
+                                android:fontFamily="@font/googlesansbold"
+                                android:singleLine="true"
+                                android:text="A1"
+                                android:textColor="@color/textheader"
+                                android:textSize="@dimen/font_medium" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_medium"
+                app:cardCornerRadius="@dimen/spacing_small"
+                app:cardElevation="@dimen/card_shadow">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5sdp">
+
+                    <CheckBox
+                        android:id="@+id/checkboxWallet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pay from Ferri Wallet"
+                        android:textSize="@dimen/font_medium" />
+
+                    <TextView
+                        android:id="@+id/tvWalletBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/googlesansbold"
+                        android:gravity="center|right"
+                        android:padding="@dimen/_5sdp"
+                        android:text="₹ 0.0"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/font_large" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/layApplyCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/bg_selected_rounded"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edPromoCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:inputType="textCapCharacters"
+                    android:fontFamily="@font/googlesanslight"
+                    android:hint="@string/promocode"
+                    android:paddingStart="@dimen/spacing_large"
+                    android:paddingEnd="@dimen/spacing_medium"
+                    android:textColor="@color/textheader"
+                    android:textSize="@dimen/font_large" />
+
+
+                <Button
+                    android:id="@+id/btnApplyPromoCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_btn_shape"
+                    android:fontFamily="@font/googlesansbold"
+                    android:text="Apply"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_medium" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layRemoveCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvPromoCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_border"
+                    android:backgroundTint="@color/green"
+                    android:fontFamily="@font/googlesanslight"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/textheader"
+                    android:textSize="@dimen/font_large" />
+
+                <Button
+                    android:id="@+id/btnRemovePromoCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_btn_shape"
+                    android:backgroundTint="@color/red"
+                    android:fontFamily="@font/googlesansbold"
+                    android:text="Remove"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_medium" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center|left"
+                        android:singleLine="true"
+                        android:text="Ride Fare"
+                        android:textColor="@color/textheader"
+                        android:textSize="@dimen/font_large" />
+
+                    <TextView
+                        android:id="@+id/location_desc_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center|left"
+                        android:singleLine="true"
+                        android:text="Tax included in fare"
+                        android:textColor="@color/textchild" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvBaseDiscountFare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/googlesansbold"
+                    android:gravity="center|right"
+                    android:padding="@dimen/_5sdp"
+                    android:text="₹ 0.0"
+                    android:visibility="gone"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/font_large" />
+
+                <TextView
+                    android:id="@+id/tvTotalFare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/googlesansbold"
+                    android:gravity="center|right"
+                    android:padding="@dimen/_5sdp"
+                    android:text="₹ 0.0"
+                    android:textColor="@color/textheader"
+                    android:textSize="@dimen/font_xlarge" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnConfirmPay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/spacing_medium"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        android:background="@drawable/bg_btn_shape"
+        android:fontFamily="@font/googlesansbold"
+        android:text="Confirm &amp; Pay"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_large" />
+
+</RelativeLayout>
