@@ -1,1 +1,0 @@
-{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"busshuttledb.bookings"},{"v":{"$numberInt":"2"},"unique":true,"key":{"pnr_no":{"$numberInt":"1"}},"name":"pnr_no_1","background":true,"ns":"busshuttledb.bookings"}],"uuid":"04b2f83a36b54510811806ceb9add622"}

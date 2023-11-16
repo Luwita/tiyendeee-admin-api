@@ -1,1 +1,0 @@
-{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"busshuttledb.tickets"},{"v":{"$numberInt":"2"},"key":{"seat_count":{"$numberInt":"1"}},"name":"seat_count_1","background":true,"ns":"busshuttledb.tickets"}],"uuid":"2a7645f5a69348838d1db3815204194f"}
